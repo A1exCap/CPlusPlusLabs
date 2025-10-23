@@ -1,0 +1,7 @@
+Computer Model: GamingPC
+Price: 1200 USD
+Processor Brand: Intel i7
+Frequency: 3.6 GHz
+Computer Model: OfficePC
+Price: 800 USD
+Hard Disk Capacity: 1024 GB
