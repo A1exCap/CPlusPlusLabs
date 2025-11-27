@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "EditFile.h"
 using namespace std;
 
 template <typename Type>
@@ -11,35 +12,6 @@ Type Minimum(Type a[], int size) {
 	}
 	return min;
 }
-
-
-template <typename Type>
-class EditFile {
-public:
-	string fileName;
-	EditFile(string name) : fileName(name) {}
-
-	void RemoveLine(Type index) {
-		ifstream infile(fileName);
-		ofstream temp("result.txt");
-
-		string line;
-		Type current = 1;
-
-		while (getline(infile, line)) {
-			if (current != index) {
-				temp << line << endl;
-			}
-			current++;
-		}
-
-		infile.close();
-		temp.close();
-
-		remove(fileName.c_str());             
-		rename("result.txt", fileName.c_str()); 
-	}
-}; 
 
 int main() {
 	
