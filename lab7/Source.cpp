@@ -21,7 +21,6 @@ void addBook() {
     getline(cin, title);
     cout << "Year of publication: ";
     cin >> year;
-    cin.ignore();
 
     library.insert({ author, {title, year} });
 
@@ -76,8 +75,7 @@ void searchByYear() {
     for (auto& entry : library) {
         if (entry.second.year == year) {
             if (!found) cout << "Books published in " << year << ":\n";
-            cout << "  - " << entry.first << ": "
-                << entry.second.title << "\n";
+            cout << "  - " << entry.first << ": " << entry.second.title << "\n";
             found = true;
         }
     }
@@ -92,8 +90,7 @@ void showAll() {
 
     cout << "All books in the library:\n";
     for (auto& entry : library) {
-        cout << entry.first << ": " << entry.second.title
-            << " (" << entry.second.year << ")\n";
+        cout << entry.first << ": " << entry.second.title << " (" << entry.second.year << ")\n";
     }
 }
 
@@ -113,13 +110,13 @@ int main() {
         cin.ignore();
 
         switch (choice) {
-        case 1: addBook(); break;
-        case 2: removeBook(); break;
-        case 3: searchByAuthor(); break;
-        case 4: searchByYear(); break;
-        case 5: showAll(); break;
-        case 0: return 0;
-        default: cout << "Invalid choice!\n";
+            case 1: addBook(); break;
+            case 2: removeBook(); break;
+            case 3: searchByAuthor(); break;
+            case 4: searchByYear(); break;
+            case 5: showAll(); break;
+            case 0: return 0;
+            default: cout << "Invalid choice!\n";
         }
     }
 }
